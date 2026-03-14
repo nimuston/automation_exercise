@@ -56,8 +56,11 @@ Increase Basket Quantity
 
 Increment item amount by one
     Wait Until Element Is Visible   ${ItemIncrement}  timeout=${WAITELEMENTSTIMEOUT}
-    #Click Element    ${ItemIncrement}
-    Click Element   css=[aria-label="Lisää määrää"]
+    Click Element   ${ItemIncrement}
+
+Decrease item amount by one
+    Wait Until Element Is Visible  ${ItemDecrease}  timeout=${WAITELEMENTSTIMEOUT}
+    Click Element  ${ItemDecrease}
 
 Verify basket total
     [Arguments]  ${baskettotal}
@@ -85,16 +88,22 @@ Select home delivery
     #Click Element   ${homeDelivery}
     #Wait Until Element Is Visible   ${matkahuolto}  timeout=${WAITELEMENTSTIMEOUT}
     #Click Element   ${matkahuolto}
-    Wait Until Element Is Visible    xpath://*[contains(text(),'kotiinkuljetus')]  timeout=${WAITELEMENTSTIMEOUT}
-    Click Button    xpath://*[contains(text(),'kotiinkuljetus')]
+    Wait Until Element Is Visible    css:div.home-delivery-split-container__group-label  timeout=${WAITELEMENTSTIMEOUT}
+    Click Button    css:div.home-delivery-split-container__group-label
     Wait Until Element Is Visible    xpath://*[contains(text(),'matkahuolto')]  timeout=${WAITELEMENTSTIMEOUT}
     Click Button    xpath://*[contains(text(),'matkahuolto')]
 
 Select get from store
-    Wait Until Element Is Visible   ${NoutoMyymalasta} timeout=${WAITELEMENTSTIMEOUT}
+    Wait Until Element Is Visible   ${NoutoMyymalasta}  timeout=${WAITELEMENTSTIMEOUT}
     Click Element   ${NoutoMyymalasta}
-    Wait Until Element Is Visible   ${EspoonKeskus}   timeout=${WAITELEMENTSTIMEOUT}
-    Click Element   ${EspoonKeskus} 
+    Wait Until Element Is Visible   ${EspoonKeskus}  timeout=${WAITELEMENTSTIMEOUT}
+    Click Element   ${EspoonKeskus}
+
+Click empty basket
+    Wait Until Element Is Visible   ${EmptyBasket}  timeout=${WAITELEMENTSTIMEOUT}
+    Click Element   ${EmptyBasket}
+    Wait Until Element Is Visible   ${EmptyBasketYes}  timeout=${WAITELEMENTSTIMEOUT}
+    Click Element   ${EmptyBasketYes}
 
 Recovery from test case failure
     close browser

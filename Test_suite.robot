@@ -15,11 +15,16 @@ TC002 - Add item to basket
     Select first item result
     Add item to basket
     Verify basket total  15 €
+    Increment item amount by one
+    Verify basket total  30 €
+    Decrease item amount by one
+    Verify basket total  15 €
     Continue shopping button
     Add item to basket
     Verify basket total  72,66 €
     To checkout
     Type postal code
     Verify receipt total  72,66 €
+    Click empty basket
     Close Browser
 
