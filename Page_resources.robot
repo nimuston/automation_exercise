@@ -80,6 +80,22 @@ Verify receipt total
     ${result} =  Get Text  css:[data-cy="basket-total-value"]
     Should Be Equal    ${BasketTotal}  ${result} 
 
+Select home delivery
+    #Wait Until Element Is Visible   ${homeDelivery}  timeout=${WAITELEMENTSTIMEOUT}
+    #Click Element   ${homeDelivery}
+    #Wait Until Element Is Visible   ${matkahuolto}  timeout=${WAITELEMENTSTIMEOUT}
+    #Click Element   ${matkahuolto}
+    Wait Until Element Is Visible    xpath://*[contains(text(),'kotiinkuljetus')]  timeout=${WAITELEMENTSTIMEOUT}
+    Click Button    xpath://*[contains(text(),'kotiinkuljetus')]
+    Wait Until Element Is Visible    xpath://*[contains(text(),'matkahuolto')]  timeout=${WAITELEMENTSTIMEOUT}
+    Click Button    xpath://*[contains(text(),'matkahuolto')]
+
+Select get from store
+    Wait Until Element Is Visible   ${NoutoMyymalasta} timeout=${WAITELEMENTSTIMEOUT}
+    Click Element   ${NoutoMyymalasta}
+    Wait Until Element Is Visible   ${EspoonKeskus}   timeout=${WAITELEMENTSTIMEOUT}
+    Click Element   ${EspoonKeskus} 
+
 Recovery from test case failure
     close browser
     open browser  ${url}    ${browser}  options=add_argument("--disable-blink-features=AutomationControlled"); add_argument("--log-level=1")
