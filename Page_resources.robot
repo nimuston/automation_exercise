@@ -31,8 +31,8 @@ Search item
     Press Keys  xpath=//input[@type='search']    ENTER
 
 Select first item result
-    Wait Until Element Is Visible  //*[@id="main-content"]/div/div[3]/div[3]/div[3]/div[1]/div/article[1]/div/div[3]/div/a/span   15s
-    Click Element  //*[@id="main-content"]/div/div[3]/div[3]/div[3]/div[1]/div/article[1]/div/div[3]/div/a/span
+    Wait Until Element Is Visible  ${FirstWCHarja}  15s
+    Press Keys  ${FirstWCHarja}    ENTER
 
 Select first search result
     #Wait Until Element Is Visible    ${FirstWCHarja}  15s
@@ -42,9 +42,13 @@ Select first search result
     #Wait Until Element Is Visible    xpath=(//a[contains(@href,"/tuote/")])[1]    15s
     #Click Element    xpath=(//a[contains(@href,"/tuote/")])[1]
 
-Add item to basket
+Add item to basketOLD
     Wait Until Element Is Visible  xpath=//button[contains(.,'Lisää ostoskoriin')]  timeout=${WAITELEMENTSTIMEOUT}
     Click Button    xpath=//button[contains(.,'Lisää ostoskoriin')]
+
+Add item to basket
+    Wait Until Element Is Visible  ${AddToBasket}   timeout=${WAITELEMENTSTIMEOUT}
+    Click Button    ${AddToBasket} 
 
 Continue shopping button
     Wait Until Element Is Visible   ${ContinueShopping}  timeout=${WAITELEMENTSTIMEOUT}
@@ -56,11 +60,13 @@ Increase Basket Quantity
 
 Increment item amount by one
     Wait Until Element Is Visible   ${ItemIncrement}  timeout=${WAITELEMENTSTIMEOUT}
-    Click Element   ${ItemIncrement}
+    ${elements}=    Get WebElements    ${ItemIncrement}
+    Click Element    ${elements}[1]
 
 Decrease item amount by one
-    Wait Until Element Is Visible  ${ItemDecrease}  timeout=${WAITELEMENTSTIMEOUT}
-    Click Element  ${ItemDecrease}
+    Wait Until Element Is Visible   ${ItemDecrease}   timeout=${WAITELEMENTSTIMEOUT}
+    ${elements}=    Get WebElements    ${ItemDecrease}
+    Click Element    ${elements}[1]
 
 Verify basket total
     [Arguments]  ${baskettotal}
