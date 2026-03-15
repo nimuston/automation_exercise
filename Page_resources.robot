@@ -30,6 +30,9 @@ Search item
     Input Text  xpath=//input[@type='search']    ${itemname}
     Press Keys  xpath=//input[@type='search']    ENTER
 
+Clear search field
+    Reload Page
+
 Select first item result
     Wait Until Element Is Visible  ${FirstWCHarja}  15s
     Press Keys  ${FirstWCHarja}    ENTER
@@ -111,7 +114,12 @@ Click empty basket
     Wait Until Element Is Visible   ${EmptyBasketYes}  timeout=${WAITELEMENTSTIMEOUT}
     Click Element   ${EmptyBasketYes}
 
+Back to shopping
+    Wait Until Element Is Visible  ${BackShopping}  15s
+    Click Element  ${BackShopping}
+
 Recovery from test case failure
     close browser
     open browser  ${url}    ${browser}  options=add_argument("--disable-blink-features=AutomationControlled"); add_argument("--log-level=1")
     title should be  Rautakauppa - K-Rauta
+    Accept Cookies If Present

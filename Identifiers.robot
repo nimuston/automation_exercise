@@ -23,6 +23,8 @@ ${SearchFields}         //*[@id="react-aria-2"]
 ${PostalCode}    //*[@id="postalCode"]
 ${PostalNumber}     00100
 
+${BackShopping}     //*[@class="conditional-link link-button link-button--orange " and @href="/"]
+
 ${homeDelivery}    //*[@id="react-aria-5812"]/h3
 ${matkahuolto}      //*[@id="main-content"]/div/div[3]/div/div/div/div[1]/div/div[2]/div/div/div[2]/div[3]/div[2]/fieldset/div[1]/label/div/div
 
