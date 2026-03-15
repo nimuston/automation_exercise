@@ -29,7 +29,7 @@ ${matkahuolto}      //*[@id="main-content"]/div/div[3]/div/div/div/div[1]/div/di
 ${NoutoMyymalasta}    //*[@id="react-aria-5808"]/h3
 ${EspoonKeskus}     //*[@id="main-content"]/div/div[3]/div/div/div/div[1]/div/div[2]/div/div/div[2]/div[1]/div[2]/fieldset/label/div[2]
 
-${EmptyBasket}      //*[@id="main-content"]/div/div[2]/button
-${EmptyBasketYes}   //*[@id="main-content"]/div/div[2]/div/div[2]/div[2]/button[1]
+${EmptyBasket}      //button[@class="clear-basket-button"]
+${EmptyBasketYes}       //button[@class="button" and @data-cy="simple-modal-confirm-button"]
 
 ${HomeDEL}      class:home-delivery-split-container__group-label
