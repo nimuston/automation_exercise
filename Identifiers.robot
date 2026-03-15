@@ -35,3 +35,5 @@ ${EmptyBasket}      //button[@class="clear-basket-button"]
 ${EmptyBasketYes}       //button[@class="button" and @data-cy="simple-modal-confirm-button"]
 
 ${HomeDEL}      class:home-delivery-split-container__group-label
+
+${MyymalatButton}       //a[contains(text(), "Myymälät")]

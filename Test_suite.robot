@@ -37,6 +37,11 @@ Add second item to basket
     To checkout
     Click empty basket
     Back to shopping
+    Clear search field
+
+Count all stores
+    Press page button  ${MyymalatButton}
+    Count all stores from page
 
 Tests done close browser
     Close Browser

@@ -118,6 +118,19 @@ Back to shopping
     Wait Until Element Is Visible  ${BackShopping}  15s
     Click Element  ${BackShopping}
 
+Press page button
+    [Arguments]  ${pagebutton}
+    Wait Until Element Is Visible   ${pagebutton}  timeout=${WAITELEMENTSTIMEOUT}
+    Click Element   ${pagebutton}
+
+Count all stores from page
+    Wait Until Page Contains Element    //div[@class="store-grid"]    10s
+    ${stores}=    Get WebElements    //div[@class="store-grid"]
+    ${count}=    Get Length    ${stores}
+    ${a_int}=    Convert To Integer    125
+    Should Be Equal    ${a_int}  ${count}
+    Log To Console    Number of stores: ${count}
+
 Recovery from test case failure
     close browser
     open browser  ${url}    ${browser}  options=add_argument("--disable-blink-features=AutomationControlled"); add_argument("--log-level=1")
