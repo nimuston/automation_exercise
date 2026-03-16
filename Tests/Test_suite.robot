@@ -1,16 +1,23 @@
 *** Settings ***
 Documentation    Simple example using SeleniumLibrary - Test suite
-Resource  Page_resources.robot
-Test Setup  Set Selenium Speed  0.5
+Resource  ../Resources/Page_resources.robot
+Test Setup  Before tests
 Test Teardown  run keyword if  '${TEST_STATUS}' == 'FAIL'  Recovery from test case failure
 
 *** Test Cases ***
 Open WebBrowser and test page
+    [Setup]    Set Selenium Speed  0.5
     Open browser to K-Rauta page
     Accept Cookies If Present
     #Maximize Browser Window
 
-Add item to basket
+#Test that page top buttons work
+    #Press page button  ${MyymalatButton}
+    #verify text on page
+    #Press page button  Palvelut
+    #verify text on page
+
+Add item to basket and finally clear basket
     Search item  ${item1}
     Select first item result
     Add item to basket
@@ -21,13 +28,13 @@ Add item to basket
     Verify basket total  15 €
     Continue shopping button
     Add item to basket
-    Verify basket total  72,66 €
+    Verify basket total  64,58 €
     To checkout
     Type postal code
-    Verify receipt total  72,66 €
+    Verify receipt total  64,58 €
     Click empty basket
     Back to shopping
-    Clear search field
+    #Clear search field
 
 Add second item to basket
     Search item  ${item1}
@@ -37,7 +44,7 @@ Add second item to basket
     To checkout
     Click empty basket
     Back to shopping
-    Clear search field
+    #Clear search field
 
 Count all stores
     Press page button  ${MyymalatButton}

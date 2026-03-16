@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Simple example using SeleniumLibrary - Resources
 Library  SeleniumLibrary
-Resource  Identifiers.robot
+Resource  ../Resources/Identifiers.robot
 
 *** Variables ***
 ${url}    https://www.k-rauta.fi/
@@ -136,3 +136,7 @@ Recovery from test case failure
     open browser  ${url}    ${browser}  options=add_argument("--disable-blink-features=AutomationControlled"); add_argument("--log-level=1")
     title should be  Rautakauppa - K-Rauta
     Accept Cookies If Present
+
+Before tests
+    Set Selenium Speed  0.5
+    Reload Page
