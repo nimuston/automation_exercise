@@ -11,9 +11,18 @@ Open WebBrowser and test page
     Accept Cookies If Present
     #Maximize Browser Window
 
-#Test that page top buttons work
-    #Press page button  ${MyymalatButton}
-    #verify text on page
+Test that page top buttons work
+    Press page button  ${MyymalatButton}
+    Press page button  ${MyymalatButton}
+    Press page button  ${PalvelutButton}
+    Press page button  ${VaraaAikaButton}
+    Press page button  ${InspiraatioButton}
+    Press page button  ${TerassilaskuriButton}
+    Press page button  ${TuotemerkitButton}
+    Press page button  ${AmmattilaisilleButton}
+    Press page button  ${TarjouksetButton}
+    Press page button  ${OutletButton}
+    #verify page
     #Press page button  Palvelut
     #verify text on page
 
@@ -34,7 +43,6 @@ Add item to basket and finally clear basket
     Verify receipt total  64,58 €
     Click empty basket
     Back to shopping
-    #Clear search field
 
 Add second item to basket
     Search item  ${item1}
@@ -44,7 +52,6 @@ Add second item to basket
     To checkout
     Click empty basket
     Back to shopping
-    #Clear search field
 
 Count all stores
     Press page button  ${MyymalatButton}

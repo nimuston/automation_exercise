@@ -58,7 +58,7 @@ Continue shopping button
     Click Element   ${ContinueShopping}
 
 Increase Basket Quantity
-    Wait Until Element Is Visible    xpath=//button[contains(@aria-label,'Lisää määrää') or contains(.,'+')]  timeout=${WAITELEMENTSTIMEOUT}
+    Wait Until Element Is Visible    xpath=//button[contains(@aria-label,'Lisää määrää') or contains(.,'+')]  15s
     Click Button    xpath=//button[contains(@aria-label,'Lisää määrää') or contains(.,'+')]
 
 Increment item amount by one
@@ -67,7 +67,7 @@ Increment item amount by one
     Click Element    ${elements}[1]
 
 Decrease item amount by one
-    Wait Until Element Is Visible   ${ItemDecrease}   timeout=${WAITELEMENTSTIMEOUT}
+    Wait Until Element Is Visible   ${ItemDecrease}  15s
     ${elements}=    Get WebElements    ${ItemDecrease}
     Click Element    ${elements}[1]
 
@@ -138,5 +138,5 @@ Recovery from test case failure
     Accept Cookies If Present
 
 Before tests
-    Set Selenium Speed  0.5
+    Set Selenium Speed  0.8
     Reload Page

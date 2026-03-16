@@ -13,8 +13,6 @@ ${AddToBasket}      //*[@class="buy-button" and @aria-label="Lisää ostoskoriin
 ${ItemIncrement}     //*[@data-cy="product-counter-increment" and @aria-label="Lisää määrää" and @type="button"]
 ${ItemDecrease}     //*[@data-cy="product-counter-decrement" and @aria-label="Vähennä määrää" and @type="button"]
 ${ContinueShopping}     css=[data-cy="continue-shopping-button"]
-${ActivateBasket}   //*[@id="app"]/div[5]/div/div[2]
-
 
 ${toCheckout}       //a[contains(text(), "Siirry kassalle")]
 
@@ -25,15 +23,15 @@ ${PostalNumber}     00100
 
 ${BackShopping}     //*[@class="conditional-link link-button link-button--orange " and @href="/"]
 
-${homeDelivery}    //*[@id="react-aria-5812"]/h3
-${matkahuolto}      //*[@id="main-content"]/div/div[3]/div/div/div/div[1]/div/div[2]/div/div/div[2]/div[3]/div[2]/fieldset/div[1]/label/div/div
-
-${NoutoMyymalasta}    //*[@id="react-aria-5808"]/h3
-${EspoonKeskus}     //*[@id="main-content"]/div/div[3]/div/div/div/div[1]/div/div[2]/div/div/div[2]/div[1]/div[2]/fieldset/label/div[2]
-
 ${EmptyBasket}      //button[@class="clear-basket-button"]
 ${EmptyBasketYes}       //button[@class="button" and @data-cy="simple-modal-confirm-button"]
 
-${HomeDEL}      class:home-delivery-split-container__group-label
-
 ${MyymalatButton}       //a[contains(text(), "Myymälät")]
+${PalvelutButton}       //a[contains(text(), "Palvelut")]
+${VaraaAikaButton}       //a[contains(text(), "Varaa aika")]
+${InspiraatioButton}       //a[contains(text(), "Inspiraatio ja ohjeet")]
+${TerassilaskuriButton}       //a[contains(text(), "Terassilaskuri")]
+${TuotemerkitButton}       //a[contains(text(), "Tuotemerkit")]
+${AmmattilaisilleButton}       //a[contains(text(), "Ammattilaisille")]
+${TarjouksetButton}       //a[contains(text(), "Tarjoukset")]
+${OutletButton}       //a[contains(text(), "Outlet")]
